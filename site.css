@@ -7,7 +7,7 @@
 }
 
 #vraag textarea {
-    border-color: green;
+    border-color: #a4243b;
     font-size: 35px;
     text-align: center;
 }
@@ -28,9 +28,25 @@
 }
 
 textarea{
-    resize: none;    
+    resize: none;  
 }
 
 #antw1 textarea, #antw2 textarea {
-    font-size: 35px;    
+    font-size: 35px;  
+    color: #fff;    
+}
+
+#antw1 textarea{
+    background-color: green;
+}
+
+#antw2 textarea{
+    background-color: red;
+}
+
+#score{
+    font-size: 35px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }

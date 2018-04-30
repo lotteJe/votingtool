@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
     <link rel="stylesheet" href="site.css">
-    <title>Hello, world!</title>
+    <title>Votingtool</title>
 </head>
 
 <body>
@@ -21,13 +21,18 @@
             </div>
         </div>
         <div class="row">
-            <div class="col" id="antw1">
+            <div class="col-sm-4" id="antw1">
                 <textarea type="text" class="form-control" rows="5"></textarea>
             </div>
-            <div class="col" id="teller1"></div>
-            <div class="col" id="vs">VS.</div>
-            <div class="col" id="teller2"></div>
-            <div class="col" id="antw2">
+            <div class="col-sm-4">
+                <div class="row" id="score">
+                    <span class="col-sm-4" id="teller1">0</span>
+                    <span class="col-sm-4" id="vs">VS</span>
+                    <span class="col-sm-4" id="teller2">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-4" id="antw2">
                 <textarea type="text" class="form-control" rows="5"></textarea>
             </div>
         </div>
@@ -35,7 +40,7 @@
             <div class="col" id="countdown"></div>
         </div>
         <div class="row">
-            <p class="col" id="text">Voor meer prikkelende ideeën over de rol van technologie in een Gent zonder fossiele brandstoffen? 
+            <p class="col" id="text">Voor meer prikkelende ideeën over de rol van technologie in een Gent zonder fossiele brandstoffen?
                 <br> Bezoek tussen 18 en 28 mei de tentoonstelling 'Post-Fossiel Gent in Nest'. Meer info
                 <a href="http://post-fossiel.gent/">www.post-fossiel.gent</a>
             </p>
@@ -56,7 +61,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
-        <script src="javascript.js" ></script>
+    <script src="javascript.js"></script>
 </body>
 
 </html>

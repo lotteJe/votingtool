@@ -1,0 +1,36 @@
+.container{
+}
+
+.row{
+    text-align: center;
+    padding:25px 25px;
+}
+
+#vraag textarea {
+    border-color: green;
+    font-size: 35px;
+    text-align: center;
+}
+
+#text{
+    text-align: left;
+    font-size: 12px;
+}
+
+#gent{
+    height: 75px;
+    padding: 5px;
+}
+
+#foresight{
+    height: 55px;
+    padding: 3px;
+}
+
+textarea{
+    resize: none;    
+}
+
+#antw1 textarea, #antw2 textarea {
+    font-size: 35px;    
+}

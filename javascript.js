@@ -1,51 +1,49 @@
-
-function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10)
-        seconds = parseInt(timer % 60, 10);
-
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = minutes + ":" + seconds;
-
-        if (--timer < 0) {
-            timer = duration;
-        }
-    }, 1000);
-}
-
-window.onload = function () {
-    var fiveMinutes = 60 * 0.5,
-        display = document.querySelector('#countdown');
-    
-    startTimer(fiveMinutes, display);
-};
 var groen = 0, rood = 0;
+var afgelopen = true;
+
 
 $(this).on('keypress', function (event) {
-    if (event.keyCode == 82) {
-      //  alert('Rood gedrukt!')
-      rood++;
-      document.getElementById("teller2").innerHTML = rood;
-    }
-    if (event.keyCode == 71) {
-      //  alert('Groen gedrukt!') 
-      groen++;      
-      document.getElementById("teller1").innerHTML = groen;
+    if (!afgelopen) {
+        if (event.keyCode == 82) {
+            //  alert('Rood gedrukt!')
+            rood++;
+            document.getElementById("teller2").innerHTML = rood;
+        }
+        if (event.keyCode == 71) {
+            //  alert('Groen gedrukt!') 
+            groen++;
+            document.getElementById("teller1").innerHTML = groen;
+        }
     }
 })
 
-/*$(this).on('keypress', function(event) {
-    if (event.keyCode == 82) {
-        alert('Rood gedrukt!')
-        groen++;
-        tellerGroen.textContent = groen;
+function countdown(minutes) {
+    afgelopen = false;
+    groen = 0;
+    rood = 0;
+    document.getElementById("teller1").innerHTML = groen;
+    document.getElementById("teller2").innerHTML = rood;
+
+    var seconds = 60;
+    var mins = minutes
+    function tick() {
+        var counter = document.getElementById("countdown");
+        var current_minutes = mins - 1
+        seconds--;
+        counter.innerHTML = (current_minutes < 10 ? "0" : "") + current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+        if (seconds > 0) {
+            setTimeout(tick, 1000);
+        } else {
+            if (mins > 1) {
+                countdown(mins - 1);
+            } else {
+                console.log("Timer gedaan");
+                $('.modal-wrapper').toggleClass('open');
+                $('.page-wrapper').toggleClass('blur-it');
+                afgelopen = true;
+                return false;
+            }
+        }
     }
-    if (event.keyCode == 71) {
-        //alert('Groen gedrukt!')
-        rood++;
-        tellerRood.textContent = rood;
-    }
-})*/
+    tick();
+}

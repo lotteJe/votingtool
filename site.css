@@ -7,9 +7,8 @@
 }
 
 #vraag textarea {
-    border-color: #a4243b;
     font-size: 35px;
-    text-align: center;
+    border-radius:40px;;    
 }
 
 #text{
@@ -28,7 +27,8 @@
 }
 
 textarea{
-    resize: none;  
+    resize: none; 
+    text-align: center;    
 }
 
 #antw1 textarea, #antw2 textarea {
@@ -38,10 +38,12 @@ textarea{
 
 #antw1 textarea{
     background-color: green;
+    border-radius: 40px;
 }
 
 #antw2 textarea{
     background-color: red;
+    border-radius: 40px;    
 }
 
 #score{
@@ -49,4 +51,86 @@ textarea{
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+}
+
+#countdown{   
+     font-size: 30px;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.blur-it {
+  filter: blur(4px);
+}
+
+
+.modal-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  background: rgba(0, 0,0, 0.50);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+}
+
+.modal-wrapper.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  width: 600px;
+  height: 400px;
+  display: block;
+  margin: 50% 0 0 -300px;
+  position: relative;
+  top: 50%; 
+  left: 50%;
+  background: #fff;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.modal-wrapper.open .modal {
+  margin-top: -200px;
+  opacity: 1;
+}
+
+.head { 
+  width: 90%;
+  height: 32px;
+  padding: 12px 30px;
+  overflow: hidden;
+  background: rgba(255, 193, 7, 1);
+  box-sizing: content-box;
+}
+
+.btn-close {
+  font-size: 28px;
+  display: block;
+  float: right;
+  color: #fff;
+}
+
+.content {
+  padding: 10%;
+}
+
+.good-job {
+  text-align: center;
+  font-family: 'Montserrat', Arial,Helvetica, sans-serif;
+  color:rgba(255, 193, 7, 1);
+}
+.good-job .fa-clock {
+  font-size: 60px;
+}
+.good-job h1 {
+  font-size: 45px;
 }
